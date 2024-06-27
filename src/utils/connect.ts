@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
 import config from "config";
 
-function connect() {
+async function connect() {
   const dbUri = config.get<string>("dbUri");
-  return mongoose.connect(dbUri)
-  .then(() => console.log("Connected to database"));
+  try {
+    await mongoose.connect(dbUri);
+    return console.log("Connected to database");
+  } catch (error) {
+    console.error("could not connect to db");
+    process.exit(1);
+  }
 }
 
 export default connect;
