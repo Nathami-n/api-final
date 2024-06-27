@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
+        "baseUrl": ".",
+        "outDir": "build"
+    },
+    "exclude": ["node_modules", "build", "dist"]
+}
